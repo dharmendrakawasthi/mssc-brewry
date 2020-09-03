@@ -1,5 +1,10 @@
 package com.techendear.app.services;
 
-public interface BeerService {
+import java.util.UUID;
 
+import com.techendear.app.model.BeerDTO;
+
+public interface BeerService {
+	
+	BeerDTO getBeerById(UUID beerId);
 }

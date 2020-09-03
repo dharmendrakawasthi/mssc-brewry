@@ -19,15 +19,13 @@ public class BeerController {
 
 	@Autowired
 	private BeerService beerService;
-	
+
 	public BeerController(BeerService beerService) {
 		this.beerService = beerService;
 	}
 
-	public BeerController() {}
-
 	@GetMapping("/{beerId}")
-	public ResponseEntity<BeerDTO> getBeer(@PathVariable UUID beerId){
-		return new ResponseEntity<>(BeerDTO.builder().build(), HttpStatus.OK);
+	public ResponseEntity<BeerDTO> getBeer(@PathVariable UUID beerId) {
+		return new ResponseEntity<>(this.beerService.getBeerById(beerId), HttpStatus.OK);
 	}
 }
