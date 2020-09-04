@@ -7,4 +7,5 @@ import com.techendear.app.model.BeerDTO;
 public interface BeerService {
 	
 	BeerDTO getBeerById(UUID beerId);
+	BeerDTO saveBeer(BeerDTO beer);
 }
